@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>DevClub - Cambios</title>
+</head>
+    <header>
+        <img class="logo" src="./Assets/logo.gif" alt="Logo do conversor">
+    </header>
+<body>
+    <main>
+        <label>
+            <b>Converter de:</b>
+            <Select class="currency-select-top">
+                
+                <option id="select-real-top" value="Real1">
+                    R$ Real
+                </option>
+                <option id="select-bitcoin-top" value="Bitcoin1">
+                    ₿ Bitcoin
+                </option>
+                <option id="select-dollar-top" value="Dollar1">
+                    US$ Dollar
+                </option>
+                <option id="select-euro-top" value="Euro1">
+                    € Euro
+                </option>
+                <option id="select-iene-top" value="Iene1">
+                    ¥ Iene
+                </option>
+                <option id="select-libra-top" value="Libra1">
+                    £ Libra
+                </option>
+                <option id="select-peso-argentino-top" value="Peso Argentino1">
+                    $ Peso Argentino
+                </option>
+            </Select>
+
+        </label>
+
+        <label>
+            <b>Converter para:</b>
+            <Select class="currency-select-down">
+            
+                <option id="select-dollar-down" value="Dollar">
+                    US$ Dollar
+                </option>
+                <option id="select-bitcoin-down" value="Bitcoin">
+                    ₿ Bitcoin
+                </option>
+                <option id="select-euro-down" value="Euro">
+                    € Euro
+                </option>
+                <option id="select-iene-down" value="Iene">
+                    ¥ Iene
+                </option>
+                <option id="select-libra-down" value="Libra">
+                    £ Libra
+                </option>
+                <option id="select-peso-argentino-down" value="Peso Argentino">
+                    $ Peso Argentino
+                </option>
+                <option id="select-real-down" value="Real">
+                    R$ Real
+                </option>
+            </Select>
+        </label>
+
+        <label>
+            Valor
+            <input class="input-currency" placeholder="Digite aqui o valor a converter">
+        </label>
+
+        <button class="convert" name="conversor">
+            Converter 
+        </button>
+
+        <button class="troca-moeda" name="Inversor">
+            <img src="./Assets/inverte.png" alt="Imagem que inverte os valores" width="52px">
+        </button>
+
+        <section>
+
+            <div class="currency-box">
+                
+                <img class="currency-img-top" src="./Assets/Real.jpg" alt="Logo Real" width="52px">
+                <p class="currency" id="currency-name-top" >R$ Real</p>
+                <P class="currency-value-to-convert">R$ 0,00</P>
+            </div>
+
+            <img class="arrow-img" src="./Assets/Arrow.jpg" alt="Seta">
+
+            <div class="currency-box">
+                <img class="currency-img-down" src="./Assets/Dollar.jpg" alt="Logo Dolar" width="52px">
+                <p class="currency" id="currency-name-down">US$ Dollar</p>
+                <P class="currency-value" >US$ 0,00</P>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="./script.js"></script>
+</html>
