@@ -494,7 +494,7 @@ function convertValues(){ //Primeira função que usei no Java Script, essa serv
         console.log("Pegou o valor convertido e colocou a baixo da bandeira do EURO ja com mascara formatada") //Teste para verificar se a linha acima funcionou
     }
     if(currencySelectToConvert1.value == "Iene1" && currencySelectToConvert2.value == "Iene"){
-        alert("Por favor não usar a mesma moeda de cambio!")
+        alert("Por favor não usar a mesma moeda de cambio!!")
         console.log("Alerta funcionou")
     }
 }
