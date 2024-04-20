@@ -10,25 +10,15 @@ console.log("Botão inversor de moedas, ativado!")
 // Etapa 6...
 const currencySelectToConvert1 = document.querySelector(".currency-select-top")
 const currencySelectToConvert2 = document.querySelector(".currency-select-down") // essa variavel da Etapa 6 está fora de ordem porque é necessario que ela seja declarada antes da função do botão, pois ela guarda o valor da escolha entre Dolar e Euro
-const removedReal = document.getElementById("select-real-down")
-const removedDollar = document.getElementById("select-dollar-down")
-const removedBitcoin = document.getElementById("select-bitcoin-down")
-const removedIene = document.getElementById("select-iene-down")
-const removedLibra = document.getElementById("select-libra-down")
-const removedEuro = document.getElementById("select-euro-down")
-const removedPesoArgentino = document.getElementById("select-peso-argentino-down")
-
-const removedRealTop = document.getElementById("select-real-top")
-const removedDollarTop = document.getElementById("select-dollar-top")
-const removedBitcoinTop = document.getElementById("select-bitcoin-top")
-const removedIeneTop = document.getElementById("select-iene-top")
-const removedlibraTop = document.getElementById("select-libra-top")
-const removedEuroTop = document.getElementById("select-euro-top")
-const removedPesoArgentinoTop = document.getElementById("select-peso-argentino-top")
 
 
-// if(currencySelectToConvert1.value =="Real1"){
+
+// if(currencySelectToConvert1.value =="Real1" && currencySelectToConvert2.value =="Dollar"){
 //     currencySelectToConvert2.removeChild(removedReal)
+// }
+
+// if (currencySelectToConvert1.value =="Dollar1" && currencySelectToConvert2.value == "Dollar"){
+//     alert("Escolha outra moeda de cambio")
 // }
 
 // if(currencySelectToConvert2.value =="Dollar"){
@@ -509,11 +499,6 @@ function convertValues(){ //Primeira função que usei no Java Script, essa serv
     }
 }
 
-/////////PROXIMO PASSO --> CRIAR A FUNÇÃO DE TRATAMENTO DA LISTA DE MOEDAS
-//pegar os if e else da função changeCurrencyTop das duas variaveis
-//currencySelectToConvert1
-//currencySelectToConvert2
-
 //Etapa 8
 function changeCurrencyTop(){
     const currencyNameTop = document.getElementById("currency-name-top")
@@ -527,87 +512,69 @@ function changeCurrencyTop(){
     const zeraCurrencyTop = currencyInputValueChangeTop*currencyZeradaTop
     console.log("O calculo de zeraDollar deu: ", zeraCurrencyTop)
 
-    // if(currencySelectToConvert1.value =="Dollar1"){
-    //     currencySelectToConvert2.removeChild(removedDollar)
-    // }
-    // if(currencySelectToConvert1.value =="Bitcoin1"){
-    //     currencySelectToConvert2.removeChild(removedBitcoin)
-    // }
-    // if(currencySelectToConvert1.value =="Iene1"){
-    //     currencySelectToConvert2.removeChild(removedIene)
-    // }
-    // if(currencySelectToConvert1.value =="Libra1"){
-    //     currencySelectToConvert2.removeChild(removedLibra)
-    // }
-    // if(currencySelectToConvert1.value =="Euro1"){
-    //     currencySelectToConvert2.removeChild(removedEuro)
-    // }
-    // if(currencySelectToConvert1.value =="PesoArgentino1"){
-    //     currencySelectToConvert2.removeChild(removedPesoArgentino)
-    // }
+    
     if(currencySelectToConvert1.value == "Dollar1"){
         currencyNameTop.innerHTML = "US$ Dollar"
         currencyImgTop.src = "./Assets/Dollar.jpg"
-        // currencyInputChangeTop.innerHTML = "Digite um novo valor"
         currencyValueChangeTop.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyTop)
         console.log("o valor de currencyValueChangeTop é: ", currencyValueChangeTop)
-        currencySelectToConvert2.removeChild(removedDollar)
-        console.log("Removeu o dollar")
-    } else if (currencySelectToConvert1.value !== "Dollar1"){
-        currencySelectToConvert2.appendChild(removedDollar)
+    //     currencySelectToConvert2.removeChild(removedDollar)
+    //     console.log("Removeu o dollar")
+    // } else if (currencySelectToConvert1.value != "Dollar1"){
+    //     currencySelectToConvert2.appendChild(removedDollar)
     }
 
     if(currencySelectToConvert1.value == "Euro1"){
         currencyNameTop.innerHTML = "€ Euro"
         currencyImgTop.src = "./Assets/Euro.jpg"
         currencyValueChangeTop.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyTop)
-        currencySelectToConvert2.removeChild(removedEuro)
-    }else if (currencySelectToConvert1.value !== "Euro1"){
-        currencySelectToConvert2.appendChild(removedEuro)
+    //     currencySelectToConvert2.removeChild(removedEuro)
+    // }else if (currencySelectToConvert1.value !== "Euro1"){
+    //     currencySelectToConvert2.appendChild(removedEuro)
     }
     if(currencySelectToConvert1.value == "Real1"){
         currencyNameTop.innerHTML = "R$ Real"
         currencyImgTop.src = "./Assets/Real.jpg"
         currencyValueChangeTop.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyTop)
-        currencySelectToConvert2.removeChild(removedReal)
-    }else if (currencySelectToConvert1.value !== "Real1"){
-        currencySelectToConvert2.appendChild(removedReal)
+    //     currencySelectToConvert2.removeChild(removedReal)
+    // }else if (currencySelectToConvert1.value != "Real1"){
+    //     currencySelectToConvert2.appendChild(removedReal)
     }
     
     if(currencySelectToConvert1.value == "Libra1"){
         currencyNameTop.innerHTML = "£ Libra"
         currencyImgTop.src = "./Assets/libra.png"
         currencyValueChangeTop.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyTop)
-        currencySelectToConvert2.removeChild(removedLibra)
-    }else if (currencySelectToConvert1.value !== "Libra1"){
-        currencySelectToConvert2.appendChild(removedLibra)
+    //     currencySelectToConvert2.removeChild(removedLibra)
+    // }else if (currencySelectToConvert1.value !== "Libra1"){
+    //     currencySelectToConvert2.appendChild(removedLibra)
     }
     
     if(currencySelectToConvert1.value == "Bitcoin1"){
         currencyNameTop.innerHTML = "₿ Bitcoin"
         currencyImgTop.src = "./Assets/bitcoin.jpg"
         currencyValueChangeTop.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyTop)
-        currencySelectToConvert2.removeChild(removedBitcoin)
-    }else if (currencySelectToConvert1.value !== "Bitcoin1"){
-        currencySelectToConvert2.appendChild(removedBitcoin)
+    //     currencySelectToConvert2.removeChild(removedBitcoin)
+    // }else if (currencySelectToConvert1.value !== "Bitcoin1"){
+    //     currencySelectToConvert2.appendChild(removedBitcoin)
     }
     
     if(currencySelectToConvert1.value == "Peso Argentino1"){
         currencyNameTop.innerHTML = "$ Peso Argentino"
         currencyImgTop.src = "./Assets/peso argentino.jpg"
         currencyValueChangeTop.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyTop)
-        currencySelectToConvert2.removeChild(removedPesoArgentino)
-    }else if (currencySelectToConvert1.value !== "Peso Argentino1"){
-        currencySelectToConvert2.appendChild(removedPesoArgentino)
+    //     currencySelectToConvert2.removeChild(removedPesoArgentino)
+    // }else if (currencySelectToConvert1.value !== "Peso Argentino1"){
+    //     currencySelectToConvert2.appendChild(removedPesoArgentino)
     }
     
     if(currencySelectToConvert1.value == "Iene1"){
         currencyNameTop.innerHTML = "¥ Iene"
         currencyImgTop.src = "./Assets/iene.jpg"
         currencyValueChangeTop.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyTop)
-        currencySelectToConvert2.removeChild(removedIene)
-    }else if (currencySelectToConvert1.value !== "Iene1"){
-        currencySelectToConvert2.appendChild(removedIene)
+    //     currencySelectToConvert2.removeChild(removedIene)
+    // }else if (currencySelectToConvert1.value !== "Iene1"){
+    //     currencySelectToConvert2.appendChild(removedIene)
     }
     
     console.log("trocou de moeda1")
@@ -631,9 +598,9 @@ function changeCurrencyDown(){
         currencyNameDown.innerHTML = "US$ Dollar"
         currencyImgDown.src = "./Assets/Dollar.jpg"
         currencyValueChangeDown.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyDown)
-        currencySelectToConvert1.removeChild(removedDollarTop)
-    }else if (currencySelectToConvert2.value !== "Dollar"){
-        currencySelectToConvert1.appendChild(removedDollarTop)
+    //     currencySelectToConvert1.removeChild(removedDollarTop)
+    // }else if (currencySelectToConvert2.value !== "Dollar"){
+    //     currencySelectToConvert1.appendChild(removedDollarTop)
     }
     
 
@@ -641,49 +608,49 @@ function changeCurrencyDown(){
         currencyNameDown.innerHTML = "Euro"
         currencyImgDown.src = "./Assets/Euro.jpg"
         currencyValueChangeDown.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyDown)
-        currencySelectToConvert1.removeChild(removedEuroTop)
-    }else if (currencySelectToConvert2.value !== "Euro"){
-        currencySelectToConvert1.appendChild(removedEuroTop)
+    //     currencySelectToConvert1.removeChild(removedEuroTop)
+    // }else if (currencySelectToConvert2.value !== "Euro"){
+    //     currencySelectToConvert1.appendChild(removedEuroTop)
     }
     if(currencySelectToConvert2.value == "Bitcoin"){
         currencyNameDown.innerHTML = "Bitcoin"
         currencyImgDown.src = "./Assets/bitcoin.jpg"
         currencyValueChangeDown.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyDown)
-        currencySelectToConvert1.removeChild(removedBitcoinTop)
-    }else if (currencySelectToConvert2.value !== "Bitcoin"){
-        currencySelectToConvert1.appendChild(removedBitcoinTop)
+    //     currencySelectToConvert1.removeChild(removedBitcoinTop)
+    // }else if (currencySelectToConvert2.value !== "Bitcoin"){
+    //     currencySelectToConvert1.appendChild(removedBitcoinTop)
     }
     if(currencySelectToConvert2.value == "Iene"){
         currencyNameDown.innerHTML = "Iene"
         currencyImgDown.src = "./Assets/iene.jpg"
         currencyValueChangeDown.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyDown)
-        currencySelectToConvert1.removeChild(removedIeneTop)
-    }else if (currencySelectToConvert2.value !== "Iene"){
-        currencySelectToConvert1.appendChild(removedIeneTop)
+    //     currencySelectToConvert1.removeChild(removedIeneTop)
+    // }else if (currencySelectToConvert2.value !== "Iene"){
+    //     currencySelectToConvert1.appendChild(removedIeneTop)
     }
     if(currencySelectToConvert2.value == "Libra"){
         currencyNameDown.innerHTML = "Libra"
         currencyImgDown.src = "./Assets/libra.png"
         currencyValueChangeDown.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyDown)
-        currencySelectToConvert1.removeChild(removedlibraTop)
-    }else if (currencySelectToConvert2.value !== "Libra"){
-        currencySelectToConvert1.appendChild(removedlibraTop)
+    //     currencySelectToConvert1.removeChild(removedlibraTop)
+    // }else if (currencySelectToConvert2.value !== "Libra"){
+    //     currencySelectToConvert1.appendChild(removedlibraTop)
     }
     if(currencySelectToConvert2.value == "Peso Argentino"){
         currencyNameDown.innerHTML = "Peso Argentino"
         currencyImgDown.src = "./Assets/peso argentino.jpg"
         currencyValueChangeDown.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyDown)
-        currencySelectToConvert1.removeChild(removedPesoArgentinoTop)
-    }else if (currencySelectToConvert2.value !== "Peso Argentino"){
-        currencySelectToConvert1.appendChild(removedPesoArgentinoTop)
+    //     currencySelectToConvert1.removeChild(removedPesoArgentinoTop)
+    // }else if (currencySelectToConvert2.value !== "Peso Argentino"){
+    //     currencySelectToConvert1.appendChild(removedPesoArgentinoTop)
     }
     if(currencySelectToConvert2.value == "Real"){
         currencyNameDown.innerHTML = "Real"
         currencyImgDown.src = "./Assets/Real.jpg"
         currencyValueChangeDown.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(zeraCurrencyDown)
-        currencySelectToConvert1.removeChild(removedRealTop)
-    }else if (currencySelectToConvert2.value !== "Real"){
-        currencySelectToConvert1.appendChild(removedRealTop)
+    //     currencySelectToConvert1.removeChild(removedRealTop)
+    // }else if (currencySelectToConvert2.value !== "Real"){
+    //     currencySelectToConvert1.appendChild(removedRealTop)
     }
     console.log("trocou de moeda2")
     
@@ -694,17 +661,36 @@ function invertValues(){
     const currencyImgDownInvert = document.querySelector(".currency-img-down")
     const currencyNameTopInvert = document.getElementById("currency-name-top")
     const currencyImgTopInvert = document.querySelector(".currency-img-top")
+    // const currencyZeraSelect1 = document.querySelector("campo-zerado-top")
+    // const currencyZeraSelect2 = document.querySelector("campo-zerado-down")
+
+    // const removedReal = document.getElementById("select-real-down")
+    // const removedDollar = document.getElementById("select-dollar-down")
+    // const removedBitcoin = document.getElementById("select-bitcoin-down")
+    // const removedIene = document.getElementById("select-iene-down")
+    // const removedLibra = document.getElementById("select-libra-down")
+    // const removedEuro = document.getElementById("select-euro-down")
+    // const removedPesoArgentino = document.getElementById("select-peso-argentino-down")
+
+    // const removedRealTop = document.getElementById("select-real-top")
+    // const removedDollarTop = document.getElementById("select-dollar-top")
+    // const removedBitcoinTop = document.getElementById("select-bitcoin-top")
+    // const removedIeneTop = document.getElementById("select-iene-top")
+    // const removedLibraTop = document.getElementById("select-libra-top")
+    // const removedEuroTop = document.getElementById("select-euro-top")
+    // const removedPesoArgentinoTop = document.getElementById("select-peso-argentino-top")
 
     //////////////////////// REVERSÃO DOLLAR///////////////////////////
-
-//     currencySelectToConvert1.removeChild(removedDollarTop)
-// }else if (currencySelectToConvert1.value !== "Dollar"){
-//     currencySelectToConvert1.appendChild(removedDollarTop)
-// }
-
-
 //Real-Dollar | Dollar-Real
+
+
     if(currencySelectToConvert1.value == "Real1" && currencySelectToConvert2.value == "Dollar"){
+       
+        // currencySelectToConvert1.removeChild(removedRealTop)
+        // currencySelectToConvert1.appendChild(removedDollarTop)
+        // currencySelectToConvert2.appendChild(removedReal)
+        // currencySelectToConvert2.removeChild(removedDollar)
+
         currencySelectToConvert1.value = "Dollar1"
         currencySelectToConvert2.value = "Real"
         currencyNameTopInvert.innerHTML = "US$ Dollar"
@@ -712,174 +698,198 @@ function invertValues(){
         currencyNameDownInvert.innerHTML = "R$ Real"
         currencyImgDownInvert.src = "./Assets/Real.jpg"
 
-        
-
-        // currencySelectToConvert1.removeChild(removedDollarTop)
-        // currencySelectToConvert2.removeChild(removedReal)
-        
-        // currencySelectToConvert1.appendChild(removedBitcoinTop)
-        // currencySelectToConvert1.appendChild(removedEuroTop)
-        // currencySelectToConvert1.appendChild(removedIeneTop)
-        // currencySelectToConvert1.appendChild(removedlibraTop)
-        // currencySelectToConvert1.appendChild(removedPesoArgentinoTop)
-        // currencySelectToConvert1.appendChild(removedRealTop)
-        currencySelectToConvert1.appendChild(removedDollarTop)
-
-        currencySelectToConvert2.appendChild(removedReal)
-        // currencySelectToConvert2.appendChild(removedBitcoin)
-        // currencySelectToConvert2.appendChild(removedDollar)
-        // currencySelectToConvert2.appendChild(removedEuro)
-        // currencySelectToConvert2.appendChild(removedIene)
-        // currencySelectToConvert2.appendChild(removedLibra)
-        // currencySelectToConvert2.appendChild(removedPesoArgentino)
-        
-    
         convertValues()
         console.log("Inverteu!")
     } else if(currencySelectToConvert1.value == "Dollar1" && currencySelectToConvert2.value == "Real") {
+        
+        // currencySelectToConvert1.appendChild(removedRealTop)
+        // currencySelectToConvert1.removeChild(removedDollarTop)
+        // currencySelectToConvert2.removeChild(removedReal)
+        // currencySelectToConvert2.appendChild(removedDollar)
+
         currencySelectToConvert1.value = "Real1"
         currencySelectToConvert2.value = "Dollar"
         currencyNameDownInvert.innerHTML = "US$ Dollar"
         currencyImgDownInvert.src = "./Assets/Dollar.jpg"
         currencyNameTopInvert.innerHTML = "R$ Real"
         currencyImgTopInvert.src = "./Assets/Real.jpg"
-        
-        // currencySelectToConvert1.appendChild(removedBitcoinTop)
-        // currencySelectToConvert1.appendChild(removedEuroTop)
-        // currencySelectToConvert1.appendChild(removedIeneTop)
-        // currencySelectToConvert1.appendChild(removedlibraTop)
-        // currencySelectToConvert1.appendChild(removedPesoArgentinoTop)
-        currencySelectToConvert1.appendChild(removedRealTop)
-        // currencySelectToConvert1.appendChild(removedDollarTop)
-
-        // currencySelectToConvert2.appendChild(removedReal)
-        // currencySelectToConvert2.appendChild(removedBitcoin)
-        currencySelectToConvert2.appendChild(removedDollar)
-        // currencySelectToConvert2.appendChild(removedEuro)
-        // currencySelectToConvert2.appendChild(removedIene)
-        // currencySelectToConvert2.appendChild(removedLibra)
-        // currencySelectToConvert2.appendChild(removedPesoArgentino)
-        
+    
     convertValues()
     console.log("Reinverteu!")
     }
+    
 //Iene-Dollar | Dollar-Iene
     if(currencySelectToConvert1.value == "Iene1" && currencySelectToConvert2.value == "Dollar"){
+        
+        // currencySelectToConvert1.removeChild(removedIeneTop)
+        // currencySelectToConvert1.appendChild(removedDollarTop)
+        // currencySelectToConvert2.appendChild(removedIene)
+        // currencySelectToConvert2.removeChild(removedDollar)
+
         currencySelectToConvert1.value = "Dollar1"
         currencySelectToConvert2.value = "Iene"
         currencyNameTopInvert.innerHTML = "US$ Dollar"
         currencyImgTopInvert.src = "./Assets/Dollar.jpg"
         currencyNameDownInvert.innerHTML = "¥ Iene"
         currencyImgDownInvert.src = "./Assets/iene.jpg"
-        currencySelectToConvert1.appendChild(removedDollarTop)
-        currencySelectToConvert2.appendChild(removedIene)
+        
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Dollar1" && currencySelectToConvert2.value == "Iene"){
+
+        // currencySelectToConvert1.appendChild(removedIeneTop)
+        // currencySelectToConvert1.removeChild(removedDollarTop)
+        // currencySelectToConvert2.removeChild(removedIene)
+        // currencySelectToConvert2.appendChild(removedDollar)
+
+
         currencySelectToConvert1.value = "Iene1"
         currencySelectToConvert2.value = "Dollar"
         currencyNameDownInvert.innerHTML = "US$ Dollar"
         currencyImgDownInvert.src = "./Assets/Dollar.jpg"
         currencyNameTopInvert.innerHTML = "¥ Iene"
         currencyImgTopInvert.src = "./Assets/iene.jpg"
-        currencySelectToConvert1.appendChild(removedIeneTop)
-        currencySelectToConvert2.appendChild(removedDollar)
+       
         convertValues()
         console.log("Reinverteu!")
     }
 //Bitcoin-Dollar | Dollar-Bitcoin
     if(currencySelectToConvert1.value == "Bitcoin1" && currencySelectToConvert2.value == "Dollar"){
+
+        // currencySelectToConvert1.removeChild(removedBitcoinTop)
+        // currencySelectToConvert1.appendChild(removedDollarTop)
+        // currencySelectToConvert2.appendChild(removedBitcoin)
+        // currencySelectToConvert2.removeChild(removedDollar)
+
         currencySelectToConvert1.value = "Dollar1"
         currencySelectToConvert2.value = "Bitcoin"
         currencyNameTopInvert.innerHTML = "US$ Dollar"
         currencyImgTopInvert.src = "./Assets/Dollar.jpg"
         currencyNameDownInvert.innerHTML = "₿ Bitcoin"
         currencyImgDownInvert.src = "./Assets/bitcoin.jpg"
-        currencySelectToConvert1.appendChild(removedDollarTop)
-        currencySelectToConvert2.appendChild(removedBitcoin)
+        
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Dollar1" && currencySelectToConvert2.value == "Bitcoin"){
+
+        // currencySelectToConvert1.appendChild(removedBitcoinTop)
+        // currencySelectToConvert1.removeChild(removedDollarTop)
+        // currencySelectToConvert2.removeChild(removedBitcoin)
+        // currencySelectToConvert2.appendChild(removedDollar)
+
+
         currencySelectToConvert1.value = "Bitcoin1"
         currencySelectToConvert2.value = "Dollar"
         currencyNameDownInvert.innerHTML = "US$ Dollar"
         currencyImgDownInvert.src = "./Assets/Dollar.jpg"
         currencyNameTopInvert.innerHTML = "₿ Bitcoin"
         currencyImgTopInvert.src = "./Assets/bitcoin.jpg"
-        currencySelectToConvert1.appendChild(removedBitcoinTop)
-        currencySelectToConvert2.appendChild(removedDollar)
+        
         convertValues()
         console.log("Reinverteu!")
     }
 //Libra-Dollar | Dollar-Libra
     if(currencySelectToConvert1.value == "Libra1" && currencySelectToConvert2.value == "Dollar"){
+
+        // currencySelectToConvert1.removeChild(removedLibraTop)
+        // currencySelectToConvert1.appendChild(removedDollarTop)
+        // currencySelectToConvert2.appendChild(removedLibra)
+        // currencySelectToConvert2.removeChild(removedDollar)
+
         currencySelectToConvert1.value = "Dollar1"
         currencySelectToConvert2.value = "Libra"
         currencyNameTopInvert.innerHTML = "US$ Dollar"
         currencyImgTopInvert.src = "./Assets/Dollar.jpg"
         currencyNameDownInvert.innerHTML = "£ Libra"
         currencyImgDownInvert.src = "./Assets/libra.png"
-        currencySelectToConvert1.appendChild(removedDollarTop)
-        currencySelectToConvert2.appendChild(removedLibra)
+        
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Dollar1" && currencySelectToConvert2.value == "Libra"){
+
+        // currencySelectToConvert1.appendChild(removedLibraTop)
+        // currencySelectToConvert1.removeChild(removedDollarTop)
+        // currencySelectToConvert2.removeChild(removedLibra)
+        // currencySelectToConvert2.appendChild(removedDollar)
+
+
         currencySelectToConvert1.value = "Libra1"
         currencySelectToConvert2.value = "Dollar"
         currencyNameDownInvert.innerHTML = "US$ Dollar"
         currencyImgDownInvert.src = "./Assets/Dollar.jpg"
         currencyNameTopInvert.innerHTML = "£ Libra"
         currencyImgTopInvert.src = "./Assets/libra.png"
-        currencySelectToConvert1.appendChild(removedlibraTop)
-        currencySelectToConvert2.appendChild(removedDollar)
+        
         convertValues()
         console.log("Reinverteu!")
     }
 //Peso Argentino-Dollar | Dollar-Peso Argentino
     if(currencySelectToConvert1.value == "Peso Argentino1" && currencySelectToConvert2.value == "Dollar"){
+
+        // currencySelectToConvert1.removeChild(removedPesoArgentinoTop)
+        // currencySelectToConvert1.appendChild(removedDollarTop)
+        // currencySelectToConvert2.appendChild(removedPesoArgentino)
+        // currencySelectToConvert2.removeChild(removedDollar)
+
         currencySelectToConvert1.value = "Dollar1"
         currencySelectToConvert2.value = "Peso Argentino"
         currencyNameTopInvert.innerHTML = "US$ Dollar"
         currencyImgTopInvert.src = "./Assets/Dollar.jpg"
         currencyNameDownInvert.innerHTML = "$ Peso Argentino"
         currencyImgDownInvert.src = "./Assets/peso argentino.jpg"
-        currencySelectToConvert1.appendChild(removedDollarTop)
-        currencySelectToConvert2.appendChild(removedPesoArgentino)
+        
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Dollar1" && currencySelectToConvert2.value == "Peso Argentino"){
+
+        // currencySelectToConvert1.appendChild(removedPesoArgentinoTop)
+        // currencySelectToConvert1.removeChild(removedDollarTop)
+        // currencySelectToConvert2.removeChild(removedPesoArgentino)
+        // currencySelectToConvert2.appendChild(removedDollar)
+
+
         currencySelectToConvert1.value = "Peso Argentino1"
         currencySelectToConvert2.value = "Dollar"
         currencyNameDownInvert.innerHTML = "US$ Dollar"
         currencyImgDownInvert.src = "./Assets/Dollar.jpg"
         currencyNameTopInvert.innerHTML = "$ Peso Argentino"
         currencyImgTopInvert.src = "./Assets/peso argentino.jpg"
-        currencySelectToConvert1.appendChild(removedPesoArgentinoTop)
-        currencySelectToConvert2.appendChild(removedDollar)
+        
         convertValues()
         console.log("Reinverteu!")
     }
 //Euro-Dollar | Dollar-Euro
     if(currencySelectToConvert1.value == "Euro1" && currencySelectToConvert2.value == "Dollar"){
+
+        // currencySelectToConvert1.removeChild(removedEuroTop)
+        // currencySelectToConvert1.appendChild(removedDollarTop)
+        // currencySelectToConvert2.appendChild(removedEuro)
+        // currencySelectToConvert2.removeChild(removedDollar)
+
         currencySelectToConvert1.value = "Dollar1"
         currencySelectToConvert2.value = "Euro"
         currencyNameTopInvert.innerHTML = "US$ Dollar"
         currencyImgTopInvert.src = "./Assets/Dollar.jpg"
         currencyNameDownInvert.innerHTML = "€ Euro"
         currencyImgDownInvert.src = "./Assets/Euro.jpg"
-        currencySelectToConvert1.appendChild(removedDollarTop)
-        currencySelectToConvert2.appendChild(removedEuro)
+       
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Dollar1" && currencySelectToConvert2.value == "Euro"){
+
+        // currencySelectToConvert1.appendChild(removedEuroTop)
+        // currencySelectToConvert1.removeChild(removedDollarTop)
+        // currencySelectToConvert2.removeChild(removedEuro)
+        // currencySelectToConvert2.appendChild(removedDollar)
+
+
         currencySelectToConvert1.value = "Euro1"
         currencySelectToConvert2.value = "Dollar"
         currencyNameDownInvert.innerHTML = "US$ Dollar"
         currencyImgDownInvert.src = "./Assets/Dollar.jpg"
         currencyNameTopInvert.innerHTML = "€ Euro"
         currencyImgTopInvert.src = "./Assets/Euro.jpg"
-        currencySelectToConvert1.appendChild(removedEuroTop)
-        currencySelectToConvert2.appendChild(removedDollar)
+       
         convertValues()
         console.log("Reinverteu!")
     }
@@ -888,6 +898,12 @@ function invertValues(){
     
  //Euro-Iene | Iene-Euro   
     if(currencySelectToConvert1.value == "Euro1" && currencySelectToConvert2.value == "Iene"){
+
+        // currencySelectToConvert1.removeChild(removedEuroTop)
+        // currencySelectToConvert1.appendChild(removedIeneTop)
+        // currencySelectToConvert2.appendChild(removedEuro)
+        // currencySelectToConvert2.removeChild(removedIene)
+
         currencySelectToConvert1.value = "Iene1"
         currencySelectToConvert2.value = "Euro"
         currencyNameTopInvert.innerHTML = "¥ Iene"
@@ -897,6 +913,13 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Iene1" && currencySelectToConvert2.value == "Euro"){
+
+        // currencySelectToConvert1.removeChild(removedIeneTop)
+        // currencySelectToConvert1.appendChild(removedEuroTop)
+        // currencySelectToConvert2.appendChild(removedIene)
+        // currencySelectToConvert2.removeChild(removedEuro)
+
+
         currencySelectToConvert1.value = "Euro1"
         currencySelectToConvert2.value = "Iene"
         currencyNameDownInvert.innerHTML = "¥ Iene"
@@ -908,6 +931,12 @@ function invertValues(){
     }
  //Real-Iene | Iene-Real  
     if(currencySelectToConvert1.value == "Real1" && currencySelectToConvert2.value == "Iene"){
+
+        // currencySelectToConvert1.removeChild(removedRealTop)
+        // currencySelectToConvert1.appendChild(removedIeneTop)
+        // currencySelectToConvert2.appendChild(removedReal)
+        // currencySelectToConvert2.removeChild(removedIene)
+
         currencySelectToConvert1.value = "Iene1"
         currencySelectToConvert2.value = "Real"
         currencyNameTopInvert.innerHTML = "¥ Iene"
@@ -917,6 +946,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Iene1" && currencySelectToConvert2.value == "Real"){
+
+        // currencySelectToConvert1.removeChild(removedIeneTop)
+        // currencySelectToConvert1.appendChild(removedRealTop)
+        // currencySelectToConvert2.appendChild(removedIene)
+        // currencySelectToConvert2.removeChild(removedReal)
+
         currencySelectToConvert1.value = "Real1"
         currencySelectToConvert2.value = "Iene"
         currencyNameDownInvert.innerHTML = "¥ Iene"
@@ -928,6 +963,12 @@ function invertValues(){
     }
 //Peso Argentino-Iene | Iene-Peso Argentino  
     if(currencySelectToConvert1.value == "Peso Argentino1" && currencySelectToConvert2.value == "Iene"){
+
+        // currencySelectToConvert1.removeChild(removedPesoArgentinoTop)
+        // currencySelectToConvert1.appendChild(removedIeneTop)
+        // currencySelectToConvert2.appendChild(removedPesoArgentino)
+        // currencySelectToConvert2.removeChild(removedIene)
+
         currencySelectToConvert1.value = "Iene1"
         currencySelectToConvert2.value = "Peso Argentino"
         currencyNameTopInvert.innerHTML = "¥ Iene"
@@ -937,6 +978,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Iene1" && currencySelectToConvert2.value == "Peso Argentino"){
+
+        // currencySelectToConvert1.removeChild(removedIeneTop)
+        // currencySelectToConvert1.appendChild(removedPesoArgentinoTop)
+        // currencySelectToConvert2.appendChild(removedIene)
+        // currencySelectToConvert2.removeChild(removedPesoArgentino)
+
         currencySelectToConvert1.value = "Peso Argentino1"
         currencySelectToConvert2.value = "Iene"
         currencyNameDownInvert.innerHTML = "¥ Iene"
@@ -948,6 +995,12 @@ function invertValues(){
     }
 //Libra-Iene | Iene-Libra
     if(currencySelectToConvert1.value == "Libra1" && currencySelectToConvert2.value == "Iene"){
+
+        // currencySelectToConvert1.removeChild(removedLibraTop)
+        // currencySelectToConvert1.appendChild(removedIeneTop)
+        // currencySelectToConvert2.appendChild(removedLibra)
+        // currencySelectToConvert2.removeChild(removedIene)
+
         currencySelectToConvert1.value = "Iene1"
         currencySelectToConvert2.value = "Libra"
         currencyNameTopInvert.innerHTML = "¥ Iene"
@@ -957,6 +1010,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Iene1" && currencySelectToConvert2.value == "Libra"){
+
+        // currencySelectToConvert1.removeChild(removedIeneTop)
+        // currencySelectToConvert1.appendChild(removedLibraTop)
+        // currencySelectToConvert2.appendChild(removedIene)
+        // currencySelectToConvert2.removeChild(removedLibra)
+
         currencySelectToConvert1.value = "Libra1"
         currencySelectToConvert2.value = "Iene"
         currencyNameDownInvert.innerHTML = "¥ Iene"
@@ -968,6 +1027,12 @@ function invertValues(){
     }
 //Bitcoin-Iene | Iene-Bitcoin
     if(currencySelectToConvert1.value == "Bitcoin1" && currencySelectToConvert2.value == "Iene"){
+
+        // currencySelectToConvert1.removeChild(removedBitcoinTop)
+        // currencySelectToConvert1.appendChild(removedIeneTop)
+        // currencySelectToConvert2.appendChild(removedBitcoin)
+        // currencySelectToConvert2.removeChild(removedIene)
+
         currencySelectToConvert1.value = "Iene1"
         currencySelectToConvert2.value = "Bitcoin"
         currencyNameTopInvert.innerHTML = "¥ Iene"
@@ -977,6 +1042,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Iene1" && currencySelectToConvert2.value == "Bitcoin"){
+
+        // currencySelectToConvert1.removeChild(removedIeneTop)
+        // currencySelectToConvert1.appendChild(removedBitcoinTop)
+        // currencySelectToConvert2.appendChild(removedIene)
+        // currencySelectToConvert2.removeChild(removedBitcoin)
+
         currencySelectToConvert1.value = "Bitcoin1"
         currencySelectToConvert2.value = "Iene"
         currencyNameDownInvert.innerHTML = "¥ Iene"
@@ -991,6 +1062,12 @@ function invertValues(){
     
 //Bitcoin-Real | Real-Bitcoin
     if(currencySelectToConvert1.value == "Bitcoin1" && currencySelectToConvert2.value == "Real"){
+
+        // currencySelectToConvert1.removeChild(removedBitcoinTop)
+        // currencySelectToConvert1.appendChild(removedRealTop)
+        // currencySelectToConvert2.appendChild(removedBitcoin)
+        // currencySelectToConvert2.removeChild(removedReal)
+
         currencySelectToConvert1.value = "Real1"
         currencySelectToConvert2.value = "Bitcoin"
         currencyNameTopInvert.innerHTML = "R$ Real"
@@ -1000,6 +1077,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Real1" && currencySelectToConvert2.value == "Bitcoin"){
+
+        // currencySelectToConvert1.removeChild(removedRealTop)
+        // currencySelectToConvert1.appendChild(removedBitcoinTop)
+        // currencySelectToConvert2.appendChild(removedReal)
+        // currencySelectToConvert2.removeChild(removedBitcoin)
+
         currencySelectToConvert1.value = "Bitcoin1"
         currencySelectToConvert2.value = "Real"
         currencyNameDownInvert.innerHTML = "R$ Real"
@@ -1011,6 +1094,12 @@ function invertValues(){
     }
 //Bitcoin-Euro | Euro-Bitcoin
     if(currencySelectToConvert1.value == "Bitcoin1" && currencySelectToConvert2.value == "Euro"){
+
+        // currencySelectToConvert1.removeChild(removedBitcoinTop)
+        // currencySelectToConvert1.appendChild(removedEuroTop)
+        // currencySelectToConvert2.appendChild(removedBitcoin)
+        // currencySelectToConvert2.removeChild(removedEuro)
+
         currencySelectToConvert1.value = "Euro1"
         currencySelectToConvert2.value = "Bitcoin"
         currencyNameTopInvert.innerHTML = "€ Euro"
@@ -1020,6 +1109,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Euro1" && currencySelectToConvert2.value == "Bitcoin"){
+
+        // currencySelectToConvert1.removeChild(removedEuroTop)
+        // currencySelectToConvert1.appendChild(removedBitcoinTop)
+        // currencySelectToConvert2.appendChild(removedEuro)
+        // currencySelectToConvert2.removeChild(removedBitcoin)
+
         currencySelectToConvert1.value = "Bitcoin1"
         currencySelectToConvert2.value = "Euro"
         currencyNameDownInvert.innerHTML = "€ Euro"
@@ -1031,6 +1126,12 @@ function invertValues(){
     }
 //Bitcoin-Peso Argentino | Peso Argentino-Bitcoin
     if(currencySelectToConvert1.value == "Bitcoin1" && currencySelectToConvert2.value == "Peso Argentino"){
+
+        // currencySelectToConvert1.removeChild(removedBitcoinTop)
+        // currencySelectToConvert1.appendChild(removedPesoArgentinoTop)
+        // currencySelectToConvert2.appendChild(removedBitcoin)
+        // currencySelectToConvert2.removeChild(removedPesoArgentino)
+
         currencySelectToConvert1.value = "Peso Argentino1"
         currencySelectToConvert2.value = "Bitcoin"
         currencyNameTopInvert.innerHTML = "$ Peso Argentino"
@@ -1040,6 +1141,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Peso Argentino1" && currencySelectToConvert2.value == "Bitcoin"){
+
+        // currencySelectToConvert1.removeChild(removedPesoArgentinoTop)
+        // currencySelectToConvert1.appendChild(removedBitcoinTop)
+        // currencySelectToConvert2.appendChild(removedPesoArgentino)
+        // currencySelectToConvert2.removeChild(removedBitcoin)
+
         currencySelectToConvert1.value = "Bitcoin1"
         currencySelectToConvert2.value = "Peso Argentino"
         currencyNameDownInvert.innerHTML = "$ Peso Argentino"
@@ -1051,6 +1158,12 @@ function invertValues(){
     }
 //Bitcoin-Libra | Libra-Bitcoin
     if(currencySelectToConvert1.value == "Bitcoin1" && currencySelectToConvert2.value == "Libra"){
+
+        // currencySelectToConvert1.removeChild(removedBitcoinTop)
+        // currencySelectToConvert1.appendChild(removedLibraTop)
+        // currencySelectToConvert2.appendChild(removedBitcoin)
+        // currencySelectToConvert2.removeChild(removedLibra)
+
         currencySelectToConvert1.value = "Libra1"
         currencySelectToConvert2.value = "Bitcoin"
         currencyNameTopInvert.innerHTML = "£ Libra"
@@ -1060,6 +1173,12 @@ function invertValues(){
         //convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Libra1" && currencySelectToConvert2.value == "Bitcoin"){
+
+        // currencySelectToConvert1.removeChild(removedLibraTop)
+        // currencySelectToConvert1.appendChild(removedBitcoinTop)
+        // currencySelectToConvert2.appendChild(removedLibra)
+        // currencySelectToConvert2.removeChild(removedBitcoin)
+
         currencySelectToConvert1.value = "Bitcoin1"
         currencySelectToConvert2.value = "Libra"
         currencyNameDownInvert.innerHTML = "£ Libra"
@@ -1073,6 +1192,12 @@ function invertValues(){
     
 //Libra-Real | Real-Libra
     if(currencySelectToConvert1.value == "Libra1" && currencySelectToConvert2.value == "Real"){
+
+        // currencySelectToConvert1.removeChild(removedLibraTop)
+        // currencySelectToConvert1.appendChild(removedRealTop)
+        // currencySelectToConvert2.appendChild(removedLibra)
+        // currencySelectToConvert2.removeChild(removedReal)
+
         currencySelectToConvert1.value = "Real1"
         currencySelectToConvert2.value = "Libra"
         currencyNameTopInvert.innerHTML = "R$ Real"
@@ -1082,6 +1207,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Real1" && currencySelectToConvert2.value == "Libra"){
+
+        // currencySelectToConvert1.removeChild(removedRealTop)
+        // currencySelectToConvert1.appendChild(removedLibraTop)
+        // currencySelectToConvert2.appendChild(removedReal)
+        // currencySelectToConvert2.removeChild(removedLibra)
+
         currencySelectToConvert1.value = "Libra1"
         currencySelectToConvert2.value = "Real"
         currencyNameDownInvert.innerHTML = "R$ Real"
@@ -1093,6 +1224,13 @@ function invertValues(){
     }
 //Peso Argentino-Real | Real-Peso Argentino
     if(currencySelectToConvert1.value == "Peso Argentino1" && currencySelectToConvert2.value == "Real"){
+
+        // currencySelectToConvert1.removeChild(removedPesoArgentinoTop)
+        // currencySelectToConvert1.appendChild(removedRealTop)
+        // currencySelectToConvert2.appendChild(removedPesoArgentino)
+        // currencySelectToConvert2.removeChild(removedReal)
+
+
         currencySelectToConvert1.value = "Real1"
         currencySelectToConvert2.value = "Peso Argentino"
         currencyNameTopInvert.innerHTML = "R$ Real"
@@ -1102,6 +1240,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Real1" && currencySelectToConvert2.value == "Peso Argentino"){
+
+        // currencySelectToConvert1.removeChild(removedRealTop)
+        // currencySelectToConvert1.appendChild(removedPesoArgentinoTop)
+        // currencySelectToConvert2.appendChild(removedReal)
+        // currencySelectToConvert2.removeChild(removedPesoArgentino)
+
         currencySelectToConvert1.value = "Peso Argentino1"
         currencySelectToConvert2.value = "Real"
         currencyNameDownInvert.innerHTML = "R$ Real"
@@ -1113,6 +1257,13 @@ function invertValues(){
     }
 //Euro-Real | Real-Euro
     if(currencySelectToConvert1.value == "Euro1" && currencySelectToConvert2.value == "Real"){
+
+        // currencySelectToConvert1.removeChild(removedEuroTop)
+        // currencySelectToConvert1.appendChild(removedRealTop)
+        // currencySelectToConvert2.appendChild(removedEuro)
+        // currencySelectToConvert2.removeChild(removedReal)
+
+
         currencySelectToConvert1.value = "Real1"
         currencySelectToConvert2.value = "Euro"
         currencyNameTopInvert.innerHTML = "R$ Real"
@@ -1122,6 +1273,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Real1" && currencySelectToConvert2.value == "Euro"){
+
+        // currencySelectToConvert1.removeChild(removedRealTop)
+        // currencySelectToConvert1.appendChild(removedEuroTop)
+        // currencySelectToConvert2.appendChild(removedReal)
+        // currencySelectToConvert2.removeChild(removedEuro)
+
         currencySelectToConvert1.value = "Euro1"
         currencySelectToConvert2.value = "Real"
         currencyNameDownInvert.innerHTML = "R$ Real"
@@ -1135,6 +1292,12 @@ function invertValues(){
     
 //Peso Argentino-Euro | Peso Argentino-Euro
     if(currencySelectToConvert1.value == "Euro1" && currencySelectToConvert2.value == "Peso Argentino"){
+
+        // currencySelectToConvert1.removeChild(removedEuroTop)
+        // currencySelectToConvert1.appendChild(removedPesoArgentinoTop)
+        // currencySelectToConvert2.appendChild(removedEuro)
+        // currencySelectToConvert2.removeChild(removedPesoArgentino)
+
         currencySelectToConvert1.value = "Peso Argentino1"
         currencySelectToConvert2.value = "Euro"
         currencyNameTopInvert.innerHTML = "$ Peso Argentino"
@@ -1144,6 +1307,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Peso Argentino1" && currencySelectToConvert2.value == "Euro"){
+
+        // currencySelectToConvert1.removeChild(removedPesoArgentinoTop)
+        // currencySelectToConvert1.appendChild(removedEuroTop)
+        // currencySelectToConvert2.appendChild(removedPesoArgentino)
+        // currencySelectToConvert2.removeChild(removedEuro)
+
         currencySelectToConvert1.value = "Euro1"
         currencySelectToConvert2.value = "Peso Argentino"
         currencyNameDownInvert.innerHTML = "$ Peso Argentino"
@@ -1155,6 +1324,12 @@ function invertValues(){
     }
 //Libra-Euro | Libra-Euro
     if(currencySelectToConvert1.value == "Euro1" && currencySelectToConvert2.value == "Libra"){
+
+        // currencySelectToConvert1.removeChild(removedEuroTop)
+        // currencySelectToConvert1.appendChild(removedLibraTop)
+        // currencySelectToConvert2.appendChild(removedEuro)
+        // currencySelectToConvert2.removeChild(removedLibra)
+
         currencySelectToConvert1.value = "Libra1"
         currencySelectToConvert2.value = "Euro"
         currencyNameTopInvert.innerHTML = "£ Libra"
@@ -1164,6 +1339,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Libra1" && currencySelectToConvert2.value == "Euro"){
+        
+        // currencySelectToConvert1.removeChild(removedLibraTop)
+        // currencySelectToConvert1.appendChild(removedEuroTop)
+        // currencySelectToConvert2.appendChild(removedLibra)
+        // currencySelectToConvert2.removeChild(removedEuro)
+        
         currencySelectToConvert1.value = "Euro1"
         currencySelectToConvert2.value = "Libra"
         currencyNameDownInvert.innerHTML = "£ Libra"
@@ -1177,6 +1358,13 @@ function invertValues(){
     
 //Peso Argentino-Libra  | Peso Argentino-Libra
     if(currencySelectToConvert1.value == "Libra1" && currencySelectToConvert2.value == "Peso Argentino"){
+
+        // currencySelectToConvert1.removeChild(removedLibraTop)
+        // currencySelectToConvert1.appendChild(removedPesoArgentinoTop)
+        // currencySelectToConvert2.appendChild(removedLibra)
+        // currencySelectToConvert2.removeChild(removedPesoArgentinoTop)
+
+
         currencySelectToConvert1.value = "Peso Argentino1"
         currencySelectToConvert2.value = "Libra"
         currencyNameTopInvert.innerHTML = "$ Peso Argentino"
@@ -1186,6 +1374,12 @@ function invertValues(){
         convertValues()
         console.log("Inverteu!")
     }else if(currencySelectToConvert1.value == "Peso Argentino1" && currencySelectToConvert2.value == "Libra"){
+
+        // currencySelectToConvert1.removeChild(removedPesoArgentinoTop)
+        // currencySelectToConvert1.appendChild(removedLibraTop)
+        // currencySelectToConvert2.appendChild(removedPesoArgentino)
+        // currencySelectToConvert2.removeChild(removedLibra)
+
         currencySelectToConvert1.value = "Libra1"
         currencySelectToConvert2.value = "Peso Argentino"
         currencyNameDownInvert.innerHTML = "$ Peso Argentino"
@@ -1197,29 +1391,49 @@ function invertValues(){
     }
 
 //////////////////////// REVERSÃO PESO ARGENTINO///////////////////////////
-    //AS REVERSÕES DE PESO ARGENTINO ESTÃO DENTOR DAS OUTRAS REVERSÕES
+    //AS REVERSÕES DE PESO ARGENTINO ESTÃO DENTRO DAS OUTRAS REVERSÕES
 
 
 // Tratamento de igualdade
     if(currencySelectToConvert1.value == "Libra1" && currencySelectToConvert2.value == "Libra"){
         alert("Por favor, selecione moedas de cambio diferentes!")
+    }else if (currencySelectToConvert1.value == "Libra" && currencySelectToConvert2.value == "Libra1"){
+        alert("Por favor, selecione moedas de cambio diferentes!")
     }
+
     if(currencySelectToConvert1.value == "Real1" && currencySelectToConvert2.value == "Real"){
         alert("Por favor, selecione moedas de cambio diferentes!")
+    }else if (currencySelectToConvert1.value == "Real" && currencySelectToConvert2.value == "Real1"){
+        alert("Por favor, selecione moedas de cambio diferentes!")
     }
+
     if(currencySelectToConvert1.value == "Euro1" && currencySelectToConvert2.value == "Euro"){
         alert("Por favor, selecione moedas de cambio diferentes!")
+    }else if(currencySelectToConvert1.value == "Euro" && currencySelectToConvert2.value == "Euro1"){
+        alert("Por favor, selecione moedas de cambio diferentes!")
     }
+
     if(currencySelectToConvert1.value == "Peso Argentino1" && currencySelectToConvert2.value == "Peso Argentino"){
         alert("Por favor, selecione moedas de cambio diferentes!")
-    }
+    }else if(currencySelectToConvert1.value == "Peso Argentino" && currencySelectToConvert2.value == "Peso Argentino1"){
+        alert("Por favor, selecione moedas de cambio diferentes!")
+    }    
+
     if(currencySelectToConvert1.value == "Dollar1" && currencySelectToConvert2.value == "Dollar"){
         alert("Por favor, selecione moedas de cambio diferentes!")
-    }
-    if(currencySelectToConvert1.value == "Bitcoin1" && currencySelectToConvert2.value == "Bitcoin"){
+    }else if(currencySelectToConvert1.value == "Dollar" && currencySelectToConvert2.value == "Dollar1"){
         alert("Por favor, selecione moedas de cambio diferentes!")
     }
+
+    if(currencySelectToConvert1.value == "Bitcoin1" && currencySelectToConvert2.value == "Bitcoin"){
+        alert("Por favor, selecione moedas de cambio diferentes!")
+    }else if(currencySelectToConvert1.value == "Bitcoin" && currencySelectToConvert2.value == "Bitcoin1"){
+        alert("Por favor, selecione moedas de cambio diferentes!")
+    }
+
     if(currencySelectToConvert1.value == "Iene1" && currencySelectToConvert2.value == "Iene"){
+        alert("Por favor, selecione moedas de cambio diferentes!")
+    }else if(currencySelectToConvert1.value == "Iene" && currencySelectToConvert2.value == "Iene1"){
         alert("Por favor, selecione moedas de cambio diferentes!")
     }
 
